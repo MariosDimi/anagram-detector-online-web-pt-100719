@@ -15,4 +15,5 @@ class Anagram
   return_array
 end
 
-listen
+listen = Anagram.new("listen")
+listen.match(%w(enlists google inlets banana))
