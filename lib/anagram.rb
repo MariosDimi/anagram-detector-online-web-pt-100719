@@ -1,20 +1,21 @@
 class Anagram
-  attr_accessor :word 
+  attr_accessor :word_to_analyze
   
-  def initialize(word)
-    @word = word
-  end
+  def initialize(word_to_analyze)
+    @word_to_analyze = word_to_analyze 
+  end 
   
-  def match(word_in_array)
-    puts "Find #{self.word} inside #{word_in_array}"
-    word_in_array.find_all do |word|
-      if word.split("").sort
-        word
+  def match(find_anagram_in_this_string) 
+    puts "Must find #{self.word_to_analyze} inside the following string: #{find_anagram_in_this_string}"
+    find_anagram_in_this_string.find_all do |word| 
+      if word.split("").sort == self.word_to_analyze.split("").sort 
+        word 
       end
-    end
+    end 
   end
   
-end
+end 
+
 
 listen = Anagram.new("listen")
-listen.match(%w(enlists google inlets banana))
+listen.match(%w(enlists google inlets inlest banana))
