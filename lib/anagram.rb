@@ -5,14 +5,15 @@ class Anagram
     @word = word
   end
   
-  def mathc(array_of_words)
-    return_array = []
-    array_of_words. each do |element|
-      (@word.split(" ").sort) == (element.split(" ").sort)
-      return_array << element
+  def match(word_in_array)
+    puts "Find #{self.word} inside #{word_in_array}"
+    word_in_array.find_all do |word|
+      if word.split("").sort
+        word
+      end
     end
   end
-  return_array
+  
 end
 
 listen = Anagram.new("listen")
